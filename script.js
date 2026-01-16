@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------------
   // 🔁 MODE SWITCH
   // ----------------------------
-  const USE_TEST_TIMER = true; // 👈 change to false for real timer
+  const USE_TEST_TIMER = false; // 👈 change to false for real timer
 
   // ----------------------------
   // INITIAL STATE
