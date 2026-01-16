@@ -111,20 +111,22 @@ body {
 /* MESSAGE AFTER CLICK */
 #message {
   max-width: 850px;
-  margin-top: 25px;
+  margin-top: 40px;
   text-align: center;
-  color: #d1cfff;
+  color: #f0ecff;   /* brighter for dark purple bg */
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 #message p {
   margin-bottom: 14px;
-  line-height: 1.6;
 }
 
 /* HIDDEN */
 .hidden {
-  display: none;
+  display: none !important;
 }
+
 #mainContent {
   display: flex;
   flex-direction: column;
@@ -168,4 +170,13 @@ body {
 .flame.off {
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+#timer {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #e6e6ff;
+  z-index: 1000;
 }

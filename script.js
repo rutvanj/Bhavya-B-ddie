@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cake = document.getElementById("cake");
   const introText = document.getElementById("introText");
   const message = document.getElementById("message");
+  message.classList.add("hidden");
   const music = document.getElementById("bg-music");
 
   if (!cake || !introText || !message) {
