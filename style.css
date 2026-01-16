@@ -173,9 +173,9 @@ body {
 }
 #timer {
   position: fixed;
-  top: 40px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #e6e6ff;
   z-index: 1000;
