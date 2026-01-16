@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Animated Birthday Cake</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Bhavya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="wrapper">
-  <div class="plate"></div>
+  <!-- TIMER (created by JS, but space kept clean) -->
 
-  <div class="cake">
-    <div class="layer"></div>
-    <div class="layer"></div>
-    <div class="layer"></div>
+  <!-- MAIN CONTENT -->
+  <div id="mainContent">
 
-    <div class="candle"></div>
-    <div class="flame"></div>
+    <!-- CAKE -->
+    <div id="cake">
+      <div class="flame"></div>
+      <div class="candle"></div>
+
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+
+      <div class="plate"></div>
+    </div>
+
+    <!-- INTRO TEXT -->
+    <div id="introText">
+      <h2>Happy Birthday!</h2>
+      <h3>Bhavya &lt;3</h3>
+      <p>(click on the cake)</p>
+      <p class="warning">
+        Criminal Advisory: Maybe Turn Down Volume — DON'T Mute
+      </p>
+    </div>
+
   </div>
 
-  <p class="text">
-    happy birthday!<br>
-    <span>Bhavya<3</span>
-  </p>
-</div>
+  <!-- MESSAGE AFTER CLICK -->
+  <div id="message" class="hidden">
+    <p>
+      Distance is weird, it doesn’t erase anything, it just makes you miss someone in a quieter way.
+      And I miss you. A lot.
+    </p>
 
+    <p>
+      You’re still my safest place, my favorite thought, and the one constant that never really changed,
+      even when everything else did. Some friendships fade with space… ours just learned how to survive it, ig.
+    </p>
+
+    <p>
+      I hope today feels like everything you ever yearn for comes alive.
+      And even if I can’t be there, you should know: I’m always in your corner. Always.
+    </p>
+
+    <p>Happy birthday. Stay you. ✨</p>
+  </div>
+
+    <!-- BACKGROUND MUSIC -->
+  <audio id="bg-music" src="music.mp3" loop></audio>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
 </body>
 </html>

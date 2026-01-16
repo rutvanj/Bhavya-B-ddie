@@ -1,127 +1,171 @@
+/* RESET */
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
   height: 100vh;
-  background: hsl(252, 44%, 14%); /* DARKER PURPLE */
+  background: radial-gradient(circle at top, #1a0f2e, #07060e);
+  color: #e6e6ff;
+  font-family: "Poppins", sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-family: Arial, sans-serif;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.wrapper {
-  width: 260px;
+/* TIMER */
+#timer {
   text-align: center;
+  color: #e6e6ff;
+  margin-bottom: 30px;
 }
 
-/* Plate */
-.plate {
-  width: 220px;
-  height: 8px;
-  background: white;
-  border-radius: 6px;
-  margin: 0 auto;
+#timer h2 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
 }
 
-/* Cake */
-.cake {
+#timer p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* INTRO TEXT */
+#introText {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#introText h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#introText h3 {
+  font-size: 1.4rem;
+  color: #ffb3d9;
+  margin: 6px 0;
+}
+
+#introText p {
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+.warning {
+  font-size: 0.85rem;
+  color: #a6a6ff;
+  opacity: 0.75;
+}
+
+/* CAKE */
+#cake {
+  cursor: pointer;
   position: relative;
-  width: 220px;
-  margin: 0 auto;
-  transform: translateX(-300px);
-  animation: slideIn 0.8s ease-out forwards;
-  animation-delay: 0.3s;
+  margin-bottom: 20px;
 }
 
-/* Cake layers (NO LINES NOW) */
 .layer {
-  width: 220px;
-  height: 36px;
-  background: #c89b6d;
+  width: 150px;
+  height: 32px;
+  background: #d2a679;
+  border-radius: 8px;
+  margin: 6px auto;
+}
+
+.plate {
+  width: 170px;
+  height: 8px;
+  background: #f0f0f0;
   border-radius: 6px;
   margin-top: 6px;
-  opacity: 0;
-  animation: stack 0.5s ease-out forwards;
 }
 
-.layer:nth-child(1) { animation-delay: 1.1s; }
-.layer:nth-child(2) { animation-delay: 1.4s; }
-.layer:nth-child(3) { animation-delay: 1.7s; }
-
-/* Candle */
 .candle {
-  position: absolute;
-  top: -45px;
-  left: 107px;
   width: 6px;
-  height: 30px;
+  height: 20px;
   background: white;
-  border-radius: 3px;
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 2.2s;
+  margin: auto;
 }
 
-/* Flame */
 .flame {
-  position: absolute;
-  top: -60px;
-  left: 100px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background: orange;
   border-radius: 50%;
-  opacity: 0;
-  animation:
-    fadeIn 0.5s forwards,
-    flicker 0.3s infinite alternate;
-  animation-delay: 2.6s;
-}
-
-/* Text */
-.text {
-  margin-top: 18px;
-  color: #e6ddff;
-  font-size: 16px;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 3.2s;
-}
-
-.text span {
-  font-size: 13px;
-}
-
-/* Animations */
-@keyframes slideIn {
-  to { transform: translateX(0); }
-}
-
-@keyframes stack {
-  from {
-    transform: translateY(-15px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
+  margin: auto;
+  animation: flicker 1s infinite;
 }
 
 @keyframes flicker {
-  from {
-    transform: scale(1);
-    background: orange;
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* MESSAGE AFTER CLICK */
+#message {
+  max-width: 850px;
+  margin-top: 25px;
+  text-align: center;
+  color: #d1cfff;
+}
+
+#message p {
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* space between cake and text */
+#cake {
+  margin-bottom: 25px;
+}
+/* 🎂 Cake glow pulse */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(180, 150, 255, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(200, 170, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(180, 150, 255, 0.3); }
+}
+
+.glow {
+  animation: glowPulse 1s infinite;
+}
+
+/* 🎉 Confetti */
+.confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #ffb3d9;
+  top: -10px;
+  animation: fall 3s linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
   to {
-    transform: scale(1.2);
-    background: yellow;
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
+}
+
+/* 🔥 Flame blow-out */
+.flame.off {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
